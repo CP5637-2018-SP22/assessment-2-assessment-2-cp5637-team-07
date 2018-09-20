@@ -11,6 +11,7 @@ if ( ! isset( $content_width ) ) {
 function groupseven_setup() {
 	/* Sets up the content width value based on the theme's design. */
 	load_theme_textdomain( 'groupseven', get_template_directory() . '/languages' );
+
 	add_theme_support( 'title-tag' );
 	/* This theme styles the visual editor with editor-style.css to match the theme style. */
 	add_editor_style( 'css/editor_style.css' );
@@ -58,11 +59,13 @@ function groupseven_setup() {
 	add_theme_support( 'post-thumbnails' );
 	add_image_size( 'groupseven_image_content_size', 656, 9999 ); /* Unlimited height, soft crop */
 }
+
 /* register navigation menu */
 function groupseven_register_nav_menu() {
 	register_nav_menu( 'header-menu', __( 'Header Menu', 'groupseven' ) );
 }
-/* ?onclusion sidebar */
+
+/* Сonclusion sidebar */
 function groupseven_register_sidebar() {
 	/* Right sidebar */
 	register_sidebar(
@@ -87,6 +90,7 @@ function groupseven_register_sidebar() {
 		)
 	);
 }
+
 /* Proper way to enqueue scripts and styles */
 function groupseven_style_scripts() {
 	/* Adds JavaScript to pages with the comment form to support sites with threaded comments (when in use). */
@@ -105,6 +109,7 @@ function groupseven_style_scripts() {
 	);
 	wp_localize_script( 'groupseven-scripts', 'script_loc', $script_localization );
 }
+
 /* Includes support Breadcrumbs */
 function groupseven_breadcrumbs() {
 	echo '<h3>';
@@ -231,6 +236,7 @@ function groupseven_breadcrumbs() {
 		echo $_GET['paged'];
 	}
 }
+
 /* output function posts */
 function groupseven_posts() {
 	global $wp_query;
@@ -240,6 +246,7 @@ function groupseven_posts() {
 		echo $num_posts;
 	}
 }
+
 /* caption text */
 function groupseven_the_post_thumbnail_caption() {
 	global $post;
@@ -256,10 +263,12 @@ function groupseven_the_post_thumbnail_caption() {
 		}
 	}
 }
+
 /* functions file enables you to customize the read more link text */
 function groupseven_modify_read_more_link() {
 	return '<a class="more-link" href="' . get_permalink() . '">' . __( 'More Link', 'groupseven' ) . '</a>';
 }
+
 function groupseven_header_style() {
 	$text_color   = get_header_textcolor();
 	$display_text = display_header_text();
@@ -284,6 +293,7 @@ function groupseven_header_style() {
 		<?php } ?>
 	</style>
 <?php }
+
 add_action( 'after_setup_theme', 'groupseven_setup' );
 add_action( 'init', 'groupseven_register_nav_menu' );
 add_action( 'widgets_init', 'groupseven_register_sidebar' );
