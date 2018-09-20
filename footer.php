@@ -25,13 +25,9 @@
 			</footer> <!-- groupseven-footer-logo-content-by -->
 		</div> <!-- groupseven-footer-logo_content -->
 		<div class="groupseven-clear"></div>
-	</div>
-   <!-- groupseven-footer-logo -->
-</div> 
-<!-- #groupseven_footer -->
-</div>
- <!-- wrapper -->
+	</div> <!-- groupseven-footer-logo -->
+</div> <!-- #groupseven_footer -->
+</div> <!-- wrapper -->
 <?php wp_footer(); ?>
 </body>
 </html>
-
